@@ -4,7 +4,6 @@
   </head>
   <body>
     <a-scene>
-	<!-- Comment 1-->
         <a-plane
         position="0 0 -6"
         rotation="-90 0 0"
