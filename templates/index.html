@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Scene</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    
+ 
+	
+	<a-scene>
+        <a-assets>
+            <a-asset-item id="mod" src="https://raw.githubusercontent.com/Gundam5698/RepoProof/main/whulvk-werewolf-lycan-blockbench/source/model.gltf"></a-asset-item>
+			<a-asset-item id="sce" src="https://raw.githubusercontent.com/Gundam5698/RepoProof/main/party_starter_-_layered_t-shirts/scene.gltf" ></a-asset-item>
+			<a-asset-item id="sce2" src="https://raw.githubusercontent.com/Gundam5698/RepoProof/main/robot/scene.gltf" ></a-asset-item>
+				
+		
+		</a-assets>
+        <a-gltf-model animation-mixer="clip: idle" position="2 2 2" scale="4 4 4" rotation="0 180 0" src="#myModel"></a-gltf-model>
+		<a-gltf-model position="2 2 2" scale="4 4 4" rotation="0 180 0" src="#scene2"></a-gltf-model>
+		<a-gltf-model position="2 2 2" scale="4 4 4" rotation="0 180 0" src="#scene"></a-gltf-model>
+        <a-camera position="0 0 5" user-height="1.6"> <a-cursor></a-cursor></a-camera>
+		<a-box opacity="0.1" color="blue" width="1" height="1" depth="0.001" position="0 1.5 -1.5"
+             text="align: center; color: black; value: (Centered) default\n(roboto) font\nwith {{sentiment}} and text {{text}}"> 
+	</a-scene>	
+	
+	<!--<p>Sentiment of the text "{{text}}" is: {{sentiment}}</p>-->
+	
+	
+	
+	<script>
+		if({{sentiment}}>0)
+			{
+			$('#mod').attr('id', 'myModel');
+			}
+		else if({{sentiment}}<0) {
+			$('#sce').attr('id', 'scene');
+			
+		} 
+		else {
+			$('#sce2').attr('id', 'scene2');
+		}	
+	</script>
+
+
+
+
+
+	
+</body>
+</html>
