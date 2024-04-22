@@ -27,7 +27,7 @@ async def read_root(request: Request, text: str):
     sentiment = analyze_sentiment(text)
     if not sentiment:
         raise HTTPException(status_code=400, detail="Invalid text.")
-    return templates.TemplateResponse("index2.html", {"request": request, "text": text, "sentiment": sentiment.sentiment})
+    return templates.TemplateResponse("index.html", {"request": request, "text": text, "sentiment": sentiment.sentiment})
 
 # Run the app
 if __name__ == "__main__":
